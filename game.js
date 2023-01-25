@@ -153,7 +153,6 @@ const bgLevel3 = {
 
 // Level 1 image
 const balls = {
-	Tx: cvs.width / 2 - lv1TextImg.width / 2,
 	Ty: 40,
 	x: 170,
 	y: 100,
@@ -163,7 +162,7 @@ const balls = {
 	img3X: 120,
 
 	draw() {
-		ctx.drawImage(lv1TextImg, this.Tx, this.Ty);
+		ctx.drawImage(lv1TextImg, cvs.width / 2 - lv1TextImg.width / 2, this.Ty);
 		if (frame === 0) {
 			ctx.drawImage(lv1ImgStage1, this.x, this.y);
 
@@ -189,10 +188,9 @@ function getHeight(height) {
 
 // Level 2 balls
 const Level2Balls = {
-	Tx: cvs.width / 2 - lv1TextImg.width / 2,
 	Ty: 40,
 	draw() {
-		ctx.drawImage(lv1TextImg, this.Tx, this.Ty);
+		ctx.drawImage(lv1TextImg, cvs.width / 2 - lv1TextImg.width / 2, this.Ty);
 
 		if (stageLevel2Frame === 0)
 			ctx.drawImage(
@@ -224,13 +222,11 @@ const Level2Balls = {
 
 // level 3 arts
 const level3 = {
-	tx: cvs.width / 2 - lv3TextImg.width / 2,
 	ty: 30,
-	px: cvs.width / 2 - playNow.width / 2,
 	py: cvs.height - 100,
 	draw() {
-		ctx.drawImage(lv3TextImg, this.tx, this.ty);
-		ctx.drawImage(playNow, this.px, this.py);
+		ctx.drawImage(lv3TextImg, cvs.width / 2 - lv3TextImg.width / 2, this.ty);
+		ctx.drawImage(playNow, cvs.width / 2 - playNow.width / 2, this.py);
 	},
 };
 
